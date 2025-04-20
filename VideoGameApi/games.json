@@ -1,0 +1,13 @@
+[
+  {
+    "Id": 0,
+    "Name": "Dark Souls III",
+    "Description": "string",
+    "Categories": [
+      {
+        "Id": 0,
+        "Name": "Action"
+      }
+    ]
+  }
+]

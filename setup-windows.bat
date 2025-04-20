@@ -22,6 +22,13 @@ dotnet sln VideoGameApi.sln add VideoGameApi/VideoGameApi.csproj
 dotnet sln VideoGameApi.sln add Data/Data.csproj
 dotnet sln VideoGameApi.sln add Models/Models.csproj
 
+REM add packages to projects
+dotnet add VideoGameApi/VideoGameApi.csproj package Swashbuckle.AspNetCore.Swagger
+dotnet add VideoGameApi/VideoGameApi.csproj package Swashbuckle.AspNetCore.SwaggerGen
+dotnet add VideoGameApi/VideoGameApi.csproj package Swashbuckle.AspNetCore.SwaggerUI
+dotnet add VideoGameApi/VideoGameApi.csproj package AutoMapper
+dotnet add Models/Models.csproj package AutoMapper
+
 REM add references to api project
 dotnet add VideoGameApi/VideoGameApi.csproj reference Data/Data.csproj
 dotnet add VideoGameApi/VideoGameApi.csproj reference Models/Models.csproj
