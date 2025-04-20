@@ -14,5 +14,21 @@
   {
     "Id": 3,
     "Name": "Sandbox"
+  },
+  {
+    "Id": 4,
+    "Name": "Open world"
+  },
+  {
+    "Id": 5,
+    "Name": "Survival"
+  },
+  {
+    "Id": 6,
+    "Name": "RogueLike"
+  },
+  {
+    "Id": 7,
+    "Name": "Adventure"
   }
 ]
