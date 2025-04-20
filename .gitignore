@@ -7,3 +7,6 @@
 # binary folders
 *bin
 *obj
+
+# scripts
+/vendor/bin/scripts/ProjectFiles/*
