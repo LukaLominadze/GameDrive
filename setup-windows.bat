@@ -1,6 +1,6 @@
 @echo off
 REM copy program.cs, because it will be overriden
-xcopy "VideoGameApi\Program.cs" "vendor\bin\scripts\ProjectFiles" /Y
+xcopy "VideoGameApi\Program.cs" "vendor\bin\scripts\ProjectFiles\" /Y
 
 REM create solution
 dotnet new sln -n VideoGameApi --force

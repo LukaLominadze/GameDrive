@@ -8,6 +8,10 @@
       {
         "Id": 0,
         "Name": "Action"
+      },
+      {
+        "Id": 2,
+        "Name": "RPG"
       }
     ]
   },
@@ -20,6 +24,18 @@
       {
         "Id": 1,
         "Name": "Platformer"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Minecraft",
+    "Description": "Father of sandbox",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/minecraft-cover.jpeg",
+    "Categories": [
+      {
+        "Id": 3,
+        "Name": "Sandbox"
       }
     ]
   }
