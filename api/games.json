@@ -2,7 +2,7 @@
   {
     "Id": 0,
     "Name": "DarkSouls III",
-    "Description": "How would you not know this game?",
+    "Description": "Dark Souls III is a 2016 action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. Released for PlayStation 4, Xbox One, and Windows, the game is the third and final entry in the Dark Souls series and follows an unkindled warrior on a quest to prevent the end of the world.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/Dark_souls_3_cover_art.jpg",
     "Categories": [
       {
@@ -18,7 +18,7 @@
   {
     "Id": 1,
     "Name": "Super Mario Bros.",
-    "Description": "The origin of platforming",
+    "Description": "Super Mario Bros. is a 1985 platform game developed and published by Nintendo for the Nintendo Entertainment System (NES). It is the successor to the 1983 arcade game Mario Bros. and the first game in the Super Mario series. It was originally released in September 1985 in Japan for the Family Computer; following a US test market release for the NES, it was converted to international arcades on the Nintendo VS. System in early 1986. The NES version received a wide release in North America that year and in PAL regions in 1987.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/super-mario-bros-cover.jpg",
     "Categories": [
       {
@@ -30,9 +30,37 @@
   {
     "Id": 2,
     "Name": "Minecraft",
-    "Description": "Father of sandbox",
+    "Description": "Minecraft is a 2011 sandbox game developed and published by Swedish video game developer Mojang Studios. Originally created by Markus \u0027Notch\u0027 Persson using the Java programming language, the first public alpha build was released on 17 May 2009.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/minecraft-cover.jpeg",
     "Categories": [
+      {
+        "Id": 3,
+        "Name": "Sandbox"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Red Dead Redemption 2",
+    "Description": "Red Dead Redemption 2 is a 2018 action-adventure game developed and published by Rockstar Games. The game is the third entry in the Red Dead series and a prequel to the 2010 game Red Dead Redemption.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/red_dead_redemption_2_cover.jpg",
+    "Categories": [
+      {
+        "Id": 0,
+        "Name": "Action"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Terraria",
+    "Description": "Terraria is a 2011 action-adventure sandbox game developed by Re-Logic and published by 505 Games. The game features exploration, combat, crafting, building, and mining inside a procedurally generated 2D world. It has several world difficulties, as well as a character class system.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/terraria-cover.jpg",
+    "Categories": [
+      {
+        "Id": 0,
+        "Name": "Action"
+      },
       {
         "Id": 3,
         "Name": "Sandbox"
