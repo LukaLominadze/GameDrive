@@ -10,7 +10,7 @@ namespace Data
 {
     public class DataContext
     {
-        const string FILE_PATH = "";
+        const string FILE_PATH = "../api/";
 
         public List<VideoGame> Games = new List<VideoGame>();
         public List<Category> Categories = new List<Category>();

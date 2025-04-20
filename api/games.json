@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 0,
+    "Name": "DarkSouls III",
+    "Description": "How would you not know this game?",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/Dark_souls_3_cover_art.jpg",
+    "Categories": [
+      {
+        "Id": 0,
+        "Name": "Action"
+      }
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Super Mario Bros.",
+    "Description": "The origin of platforming",
+    "Image": "string",
+    "Categories": [
+      {
+        "Id": 1,
+        "Name": "Platformer"
+      }
+    ]
+  }
+]
