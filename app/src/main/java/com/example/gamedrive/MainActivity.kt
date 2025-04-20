@@ -1,5 +1,6 @@
 package com.example.gamedrive
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -60,7 +61,11 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                 }
 
                 val recyclerView = findViewById<RecyclerView>(R.id.NoteRecyclerView)
-                val recyclerViewAdapter = GameCardRecyclerViewAdapter(this@MainActivity, this@MainActivity, gameCardModels)
+                val recyclerViewAdapter = GameCardRecyclerViewAdapter(
+                    this@MainActivity,
+                    this@MainActivity,
+                    gameCardModels,
+                    gameArray)
                 recyclerView.adapter = recyclerViewAdapter
                 recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
             } catch (e: IOException) {
@@ -83,7 +88,18 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         }*/
     }
 
-    override fun onClick(position: Int) {
+    override fun onClick(game: Game)  {
+        val intent = Intent(this@MainActivity, GameActivity::class.java)
+        var genres = game.categories!!.get(0).name
+        for (i in 1..game.categories!!.size-1) {
+            genres += (", " + game.categories[i].name)
+        }
 
+        intent.putExtra("TITLE", game.name)
+        intent.putExtra("GENRE", genres)
+        intent.putExtra("DESCRIPTION", game.description)
+        intent.putExtra("IMAGE", game.image)
+
+        startActivity(intent)
     }
 }

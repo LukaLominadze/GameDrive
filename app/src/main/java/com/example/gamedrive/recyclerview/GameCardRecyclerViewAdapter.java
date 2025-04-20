@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamedrive.R;
+import com.example.gamedrive.api.Game;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,11 +22,15 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
 
     private Context context;
     private ArrayList<GameCardModel> gameCardModels;
+    private ArrayList<Game> gameArray;
 
-    public GameCardRecyclerViewAdapter(RecyclerViewInterface recyclerViewInterface, Context context, ArrayList<GameCardModel> gameCardModels) {
+    public GameCardRecyclerViewAdapter(RecyclerViewInterface recyclerViewInterface, Context context,
+                                       ArrayList<GameCardModel> gameCardModels,
+                                       ArrayList<Game> gameArray) {
         this.recyclerViewInterface = recyclerViewInterface;
         this.context = context;
         this.gameCardModels = gameCardModels;
+        this.gameArray = gameArray;
     }
 
     @NonNull
@@ -44,6 +49,7 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
                 .load(gameCardModels.get(position).getImage())
                 .resize(600, 800)
                 .into(holder.CoverImageView);
+        holder.bind(gameArray.get(position));
     }
 
     @Override
@@ -56,6 +62,8 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
         public TextView TitleTextView;
         public TextView CategoryTextView;
         public ImageView CoverImageView;
+        public View ItemView;
+        public RecyclerViewInterface RecyclerInterface;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
@@ -63,16 +71,16 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
             TitleTextView = itemView.findViewById(R.id.rowTitleTextView);
             CategoryTextView = itemView.findViewById(R.id.rowCategoryTextView);
             CoverImageView = itemView.findViewById(R.id.coverImageView);
+            ItemView = itemView;
+            RecyclerInterface = recyclerViewInterface;
+        }
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+        public void bind(Game game) {
+            ItemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (recyclerViewInterface != null) {
-                        int position = getAdapterPosition();
-
-                        if (position != RecyclerView.NO_POSITION) {
-                            recyclerViewInterface.onClick(position);
-                        }
+                    if (RecyclerInterface != null) {
+                        RecyclerInterface.onClick(game);
                     }
                 }
             });
