@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gamedrive.api.Game
 import com.example.gamedrive.api.RestClient
 import com.example.gamedrive.recyclerview.GameCardModel
 import com.example.gamedrive.recyclerview.GameCardRecyclerViewAdapter
@@ -19,6 +20,7 @@ import retrofit2.HttpException
 
 class MainActivity : AppCompatActivity(), RecyclerViewInterface {
     private lateinit var gameCardModels: ArrayList<GameCardModel>
+    private lateinit var gameArray: ArrayList<Game>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +42,20 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                     val games = response.body()
                     games?.forEach { game ->
                         var categories = game.categories?.get(0)?.name
-                        for (i in 1..game.categories!!.size-1) {
-                            categories += (", " + game.categories[i])
+                        gameArray = ArrayList<Game>()
+                        for (g in games) {
+                            gameArray.add(Game(
+                                id = g.id,
+                                name = g.name,
+                                description = g.description,
+                                image = g.image,
+                                categories = g.categories
+                            ))
                         }
-                        gameCardModels.add(GameCardModel(game.name, categories))
+                        for (i in 1..game.categories!!.size-1) {
+                            categories += (", " + game.categories[i].name)
+                        }
+                        gameCardModels.add(GameCardModel(game.name, categories, game.image))
                      }
                 }
 
@@ -69,10 +81,6 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
             recyclerViewAdapter.notifyItemInserted(noteCardModels.size - 1)
             recyclerView.scrollToPosition(noteCardModels.size - 1)
         }*/
-    }
-
-    private fun setupGameCardModels() {
-        gameCardModels.add(GameCardModel("Title", "Category"))
     }
 
     override fun onClick(position: Int) {

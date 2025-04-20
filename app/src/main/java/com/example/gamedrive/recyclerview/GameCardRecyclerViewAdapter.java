@@ -4,12 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamedrive.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,7 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
     public void onBindViewHolder(@NonNull GameCardRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.TitleTextView.setText(gameCardModels.get(position).getTitle());
         holder.CategoryTextView.setText(gameCardModels.get(position).getCategory());
+        Picasso.get().load(gameCardModels.get(position).getImage()).into(holder.CoverImageView);
     }
 
     @Override
@@ -49,12 +52,15 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
 
         public TextView TitleTextView;
         public TextView CategoryTextView;
+        public ImageView CoverImageView;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
             TitleTextView = itemView.findViewById(R.id.rowTitleTextView);
             CategoryTextView = itemView.findViewById(R.id.rowCategoryTextView);
+            CoverImageView = itemView.findViewById(R.id.coverImageView);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

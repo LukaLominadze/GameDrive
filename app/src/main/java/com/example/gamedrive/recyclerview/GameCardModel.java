@@ -4,10 +4,12 @@ public class GameCardModel {
 
     private String title;
     private String category;
+    private String image;
 
-    public GameCardModel(String title, String category) {
+    public GameCardModel(String title, String category, String image) {
         this.title = title;
         this.category = category;
+        this.image = image;
     }
 
     public String getTitle() {
@@ -24,6 +26,14 @@ public class GameCardModel {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }
