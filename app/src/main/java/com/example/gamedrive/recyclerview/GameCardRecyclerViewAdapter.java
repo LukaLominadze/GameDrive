@@ -40,7 +40,10 @@ public class GameCardRecyclerViewAdapter extends RecyclerView.Adapter<GameCardRe
     public void onBindViewHolder(@NonNull GameCardRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.TitleTextView.setText(gameCardModels.get(position).getTitle());
         holder.CategoryTextView.setText(gameCardModels.get(position).getCategory());
-        Picasso.get().load(gameCardModels.get(position).getImage()).into(holder.CoverImageView);
+        Picasso.get()
+                .load(gameCardModels.get(position).getImage())
+                .resize(600, 800)
+                .into(holder.CoverImageView);
     }
 
     @Override
