@@ -49,7 +49,7 @@ namespace VideoGameApi.Controllers
                 return BadRequest("Element doesn't exist!");
             }
 
-            _context.Update(gameRef);
+            _context.Update(videoGame);
             _context.SaveChanges();
 
             return Ok(gameRef); 
