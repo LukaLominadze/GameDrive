@@ -15,7 +15,7 @@
     "Id": 1,
     "Name": "Super Mario Bros.",
     "Description": "The origin of platforming",
-    "Image": "string",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/super-mario-bros-cover.jpg",
     "Categories": [
       {
         "Id": 1,
