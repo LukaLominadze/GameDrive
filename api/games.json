@@ -66,5 +66,69 @@
         "Name": "Sandbox"
       }
     ]
+  },
+    {
+    "Id": 5,
+    "Name": "Grand Theft Auto V",
+    "Description": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth instalment overall.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/grand-theft-auto-v-cover.jpg",
+    "Categories": [
+      {
+        "Id": 4,
+        "Name": "Open world" 
+      },
+      {
+        "Id": 0,
+        "Name": "Action"
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Muck",
+    "Description": "Trapped in the muck on an island, alone or with your friends, try to survive as long as possible by using the resources you find around the island. Collect resources, craft tools, weapons, & armor, find items & build your base during day. But once night falls, mysterious enemies appear from the shadows. Using the resources and items you've crafted during the day, you must try and make it through the night.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/muck-cover.jpg",
+    "Categories": [
+      {
+        "Id": 5,
+        "Name": "Survival" 
+      },
+      {
+        "Id": 6,
+        "Name": "RogueLike" 
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Mirror's Edge Catalyst",
+    "Description": "Follow Faith, a daring free runner, as she fights for freedom in the city of Glass. What appears to be an elegant, high-tech city on the outside, has a terrible secret hidden within. Explore every corner from the highest beautifully lit rooftops to the dark and gritty tunnels below. The city is huge, free to roam and Faith is at the center of it all. Through the first-person perspective, combine her fluid movement and advanced combat with the city's surroundings to master the environment and uncover the conspiracy.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/mirrors-edge-catalyst-cover.jpg",
+    "Categories": [
+      { 
+        "Id": 0,
+        "Name": "Action" 
+      },
+      { 
+        "Id": 4,
+        "Name": "Open world" 
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "God of War",
+    "Description": "Enter the Norse realm - His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/god-of-war-cover.jpg",
+    "Categories": [
+      {
+        "Id": 0,
+        "Name": "Action"
+      },
+      { 
+        "Id": 7,
+        "Name": "Adventure"
+      }
+    ]
   }
 ]
