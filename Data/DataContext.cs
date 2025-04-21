@@ -54,6 +54,7 @@ namespace Data
             VideoGame gameRef = Games.FirstOrDefault(x => x.Id == videoGame.Id);
             gameRef.Name = videoGame.Name;
             gameRef.Description = videoGame.Description;
+            gameRef.Image = videoGame.Image;
             gameRef.Categories = videoGame.Categories;
         }
 
