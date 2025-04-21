@@ -1,7 +1,7 @@
 # GameDrive 🕹️
 An android app to browse game and find out more about them
 
-https://github.com/user-attachments/assets/ef897490-1252-4230-888e-d6db637cf6c1
+https://github.com/user-attachments/assets/61421160-feeb-408f-9569-12a053a0c33b
 
 ## About
 In this project I am experimenting with creating my own Web API and accessing it through the android application.
