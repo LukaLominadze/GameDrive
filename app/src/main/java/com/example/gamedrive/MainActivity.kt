@@ -39,12 +39,15 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
             insets
         }
 
+        // Initializing the necessary data for the application
         gameCardModels = ArrayList<GameCardModel>()
         searchEditText = findViewById<EditText>(R.id.searchEditText)
         RestClient.init()
 
+        // Launch REST
         lifecycleScope.launch {
             try {
+                // Retrieve data of video games to display on screen
                 val response = RestClient.getGameApi().getGames()
                 if (response.isSuccessful) {
                     val games = response.body()
@@ -76,6 +79,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
     }
 
     private fun setupAdapaterData(games: List<Game>?) {
+        // Convert all games into game card types to include in the recycler view
         games?.forEach { game ->
             var categories = game.categories?.get(0)?.name
             gameArray = ArrayList<Game>()
@@ -90,6 +94,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                     )
                 )
             }
+            // Put categories in a single string
             for (i in 1..game.categories!!.size - 1) {
                 categories += (", " + game.categories[i].name)
             }
@@ -97,6 +102,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         }
     }
 
+    // Recreate the view to display search results
     private fun setOnSearchTextChanged() {
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -125,8 +131,10 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         })
     }
 
+    // Once a video game card is picked, open a new window to display full information
     override fun onClick(game: Game)  {
         val intent = Intent(this@MainActivity, GameActivity::class.java)
+        // Putting genres inside a single string
         var genres = game.categories!!.get(0).name
         for (i in 1..game.categories!!.size-1) {
             genres += (", " + game.categories[i].name)

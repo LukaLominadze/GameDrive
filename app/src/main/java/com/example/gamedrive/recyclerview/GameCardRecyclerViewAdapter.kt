@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso
 class GameCardRecyclerViewAdapter(
     private val recyclerViewInterface: RecyclerViewInterface,
     private val context: Context,
+    // The array of games contains all the data that we get from the web
+    // GameCardModels are there to only hold the data that is required by each card on the screen
     private val gameCardModels: ArrayList<GameCardModel>,
     private val gameArray: ArrayList<Game>
 ) : RecyclerView.Adapter<GameCardRecyclerViewAdapter.MyViewHolder>() {
@@ -57,6 +59,8 @@ class GameCardRecyclerViewAdapter(
         val categoryTextView: TextView = itemView.findViewById(R.id.rowCategoryTextView)
         val coverImageView: ImageView = itemView.findViewById(R.id.coverImageView)
 
+        // This function will bind each data struct to the cards, so when we click it,
+        // we load the appropriate data for the second window
         fun bind(game: Game) {
             itemView.setOnClickListener {
                 recyclerInterface.onClick(game)
