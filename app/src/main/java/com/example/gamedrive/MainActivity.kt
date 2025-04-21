@@ -2,6 +2,9 @@ package com.example.gamedrive
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +25,9 @@ import retrofit2.HttpException
 class MainActivity : AppCompatActivity(), RecyclerViewInterface {
     private lateinit var gameCardModels: ArrayList<GameCardModel>
     private lateinit var gameArray: ArrayList<Game>
+    private lateinit var searchEditText: EditText
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewAdapter: GameCardRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,37 +39,26 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
             insets
         }
 
+        // Initializing the necessary data for the application
         gameCardModels = ArrayList<GameCardModel>()
+        searchEditText = findViewById<EditText>(R.id.searchEditText)
         RestClient.init()
 
+        // Launch REST
         lifecycleScope.launch {
             try {
+                // Retrieve data of video games to display on screen
                 val response = RestClient.getGameApi().getGames()
                 if (response.isSuccessful) {
                     val games = response.body()
-                    games?.forEach { game ->
-                        var categories = game.categories?.get(0)?.name
-                        gameArray = ArrayList<Game>()
-                        for (g in games) {
-                            gameArray.add(
-                                Game(
-                                    id = g.id,
-                                    name = g.name,
-                                    description = g.description,
-                                    image = g.image,
-                                    categories = g.categories
-                                )
-                            )
-                        }
-                        for (i in 1..game.categories!!.size - 1) {
-                            categories += (", " + game.categories[i].name)
-                        }
-                        gameCardModels.add(GameCardModel(game.name, categories, game.image))
-                    }
+                    setupAdapaterData(games)
+                }
+                else {
+                    Toast.makeText(this@MainActivity, "Internet is required", Toast.LENGTH_SHORT).show()
                 }
 
-                val recyclerView = findViewById<RecyclerView>(R.id.NoteRecyclerView)
-                val recyclerViewAdapter = GameCardRecyclerViewAdapter(
+                recyclerView = findViewById<RecyclerView>(R.id.NoteRecyclerView)
+                recyclerViewAdapter = GameCardRecyclerViewAdapter(
                     this@MainActivity,
                     this@MainActivity,
                     gameCardModels,
@@ -71,6 +66,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                 )
                 recyclerView.adapter = recyclerViewAdapter
                 recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+
+                setOnSearchTextChanged()
             } catch (e: IOException) {
                 Toast.makeText(this@MainActivity, "Invalid request", Toast.LENGTH_SHORT).show()
             } catch (e: HttpException) {
@@ -81,8 +78,63 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
         }
     }
 
+    private fun setupAdapaterData(games: List<Game>?) {
+        // Convert all games into game card types to include in the recycler view
+        games?.forEach { game ->
+            var categories = game.categories?.get(0)?.name
+            gameArray = ArrayList<Game>()
+            for (g in games) {
+                gameArray.add(
+                    Game(
+                        id = g.id,
+                        name = g.name,
+                        description = g.description,
+                        image = g.image,
+                        categories = g.categories
+                    )
+                )
+            }
+            // Put categories in a single string
+            for (i in 1..game.categories!!.size - 1) {
+                categories += (", " + game.categories[i].name)
+            }
+            gameCardModels.add(GameCardModel(game.name, categories, game.image))
+        }
+    }
+
+    // Recreate the view to display search results
+    private fun setOnSearchTextChanged() {
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val query = s.toString()
+                recyclerViewAdapter = GameCardRecyclerViewAdapter(
+                    this@MainActivity,
+                    this@MainActivity,
+                    gameCardModels.filter { it.title.contains(query, ignoreCase = true) }.toCollection(
+                        ArrayList()),
+                    gameArray.filter { it.name!!.contains(query, ignoreCase = true) }.toCollection(
+                        ArrayList())
+                )
+                recyclerView.adapter = recyclerViewAdapter
+                recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                p0: CharSequence?, p1: Int, p2: Int, p3: Int
+            ) {
+            }
+
+        })
+    }
+
+    // Once a video game card is picked, open a new window to display full information
     override fun onClick(game: Game)  {
         val intent = Intent(this@MainActivity, GameActivity::class.java)
+        // Putting genres inside a single string
         var genres = game.categories!!.get(0).name
         for (i in 1..game.categories!!.size-1) {
             genres += (", " + game.categories[i].name)
