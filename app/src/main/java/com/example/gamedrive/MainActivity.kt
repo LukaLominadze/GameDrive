@@ -61,6 +61,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                         gameCardModels.add(GameCardModel(game.name, categories, game.image))
                     }
                 }
+                else {
+                    Toast.makeText(this@MainActivity, "Internet is required", Toast.LENGTH_SHORT).show()
+                }
 
                 val recyclerView = findViewById<RecyclerView>(R.id.NoteRecyclerView)
                 val recyclerViewAdapter = GameCardRecyclerViewAdapter(
