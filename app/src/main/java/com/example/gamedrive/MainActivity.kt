@@ -41,25 +41,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
                 val response = RestClient.getGameApi().getGames()
                 if (response.isSuccessful) {
                     val games = response.body()
-                    games?.forEach { game ->
-                        var categories = game.categories?.get(0)?.name
-                        gameArray = ArrayList<Game>()
-                        for (g in games) {
-                            gameArray.add(
-                                Game(
-                                    id = g.id,
-                                    name = g.name,
-                                    description = g.description,
-                                    image = g.image,
-                                    categories = g.categories
-                                )
-                            )
-                        }
-                        for (i in 1..game.categories!!.size - 1) {
-                            categories += (", " + game.categories[i].name)
-                        }
-                        gameCardModels.add(GameCardModel(game.name, categories, game.image))
-                    }
+                    setupAdapaterData(games)
                 }
                 else {
                     Toast.makeText(this@MainActivity, "Internet is required", Toast.LENGTH_SHORT).show()
@@ -81,6 +63,28 @@ class MainActivity : AppCompatActivity(), RecyclerViewInterface {
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun setupAdapaterData(games: List<Game>?) {
+        games?.forEach { game ->
+            var categories = game.categories?.get(0)?.name
+            gameArray = ArrayList<Game>()
+            for (g in games) {
+                gameArray.add(
+                    Game(
+                        id = g.id,
+                        name = g.name,
+                        description = g.description,
+                        image = g.image,
+                        categories = g.categories
+                    )
+                )
+            }
+            for (i in 1..game.categories!!.size - 1) {
+                categories += (", " + game.categories[i].name)
+            }
+            gameCardModels.add(GameCardModel(game.name, categories, game.image))
         }
     }
 
