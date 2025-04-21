@@ -20,21 +20,33 @@ namespace Data
             Load();
         }
 
-        public void Add(VideoGame videoGame) 
+        public bool Add(VideoGame videoGame) 
         {
             if (Games.Count > 0)
             {
                 videoGame.Id = Games.Last().Id + 1;
             }
+            foreach (Category category in videoGame.Categories)
+            {
+                Category categoryRef = Categories.FirstOrDefault(x => x.Name.Equals(category.Name));
+                if (categoryRef == null)
+                {
+                    return false;
+                }
+                category.Id = categoryRef.Id;
+            }
             Games.Add(videoGame);
+            return true;
         }
-        public void Add(Category category) 
+
+        public bool Add(Category category) 
         {
             if (Categories.Count > 0)
             {
                 category.Id = Categories.Last().Id + 1;
             }
             Categories.Add(category);
+            return true;
         }
 
         public void Update(VideoGame videoGame) 

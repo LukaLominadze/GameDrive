@@ -67,15 +67,15 @@
       }
     ]
   },
-    {
+  {
     "Id": 5,
     "Name": "Grand Theft Auto V",
-    "Description": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth instalment overall.",
+    "Description": "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008\u0027s Grand Theft Auto IV, and the fifteenth instalment overall.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/grand-theft-auto-v-cover.jpg",
     "Categories": [
       {
         "Id": 4,
-        "Name": "Open world" 
+        "Name": "Open world"
       },
       {
         "Id": 0,
@@ -86,48 +86,136 @@
   {
     "Id": 6,
     "Name": "Muck",
-    "Description": "Trapped in the muck on an island, alone or with your friends, try to survive as long as possible by using the resources you find around the island. Collect resources, craft tools, weapons, & armor, find items & build your base during day. But once night falls, mysterious enemies appear from the shadows. Using the resources and items you've crafted during the day, you must try and make it through the night.",
+    "Description": "Trapped in the muck on an island, alone or with your friends, try to survive as long as possible by using the resources you find around the island. Collect resources, craft tools, weapons, \u0026 armor, find items \u0026 build your base during day. But once night falls, mysterious enemies appear from the shadows. Using the resources and items you\u0027ve crafted during the day, you must try and make it through the night.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/muck-cover.jpg",
     "Categories": [
       {
         "Id": 5,
-        "Name": "Survival" 
+        "Name": "Survival"
       },
       {
         "Id": 6,
-        "Name": "RogueLike" 
+        "Name": "RogueLike"
       }
     ]
   },
   {
     "Id": 7,
-    "Name": "Mirror's Edge Catalyst",
-    "Description": "Follow Faith, a daring free runner, as she fights for freedom in the city of Glass. What appears to be an elegant, high-tech city on the outside, has a terrible secret hidden within. Explore every corner from the highest beautifully lit rooftops to the dark and gritty tunnels below. The city is huge, free to roam and Faith is at the center of it all. Through the first-person perspective, combine her fluid movement and advanced combat with the city's surroundings to master the environment and uncover the conspiracy.",
+    "Name": "Mirror\u0027s Edge Catalyst",
+    "Description": "Follow Faith, a daring free runner, as she fights for freedom in the city of Glass. What appears to be an elegant, high-tech city on the outside, has a terrible secret hidden within. Explore every corner from the highest beautifully lit rooftops to the dark and gritty tunnels below. The city is huge, free to roam and Faith is at the center of it all. Through the first-person perspective, combine her fluid movement and advanced combat with the city\u0027s surroundings to master the environment and uncover the conspiracy.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/mirrors-edge-catalyst-cover.jpg",
     "Categories": [
-      { 
+      {
         "Id": 0,
-        "Name": "Action" 
+        "Name": "Action"
       },
-      { 
+      {
         "Id": 4,
-        "Name": "Open world" 
+        "Name": "Open world"
       }
     ]
   },
   {
     "Id": 8,
     "Name": "God of War",
-    "Description": "Enter the Norse realm - His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.",
+    "Description": "Enter the Norse realm - His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive\u2026 and teach his son to do the same.",
     "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/god-of-war-cover.jpg",
     "Categories": [
       {
         "Id": 0,
         "Name": "Action"
       },
-      { 
+      {
         "Id": 7,
         "Name": "Adventure"
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "We Were Here",
+    "Description": "We Were Here is the free pilot episode in a series of cooperative standalone puzzle adventures. Two players are trapped inside an abandoned castle, with Player One confined to a small secluded part of the castle as Player Two roams the halls trying to find Player One. Every room challenges your wits and ability to communicate clearly, using only your voice.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/we-were-here-cover.jpg",
+    "Categories": [
+      {
+        "Id": 8,
+        "Name": "Co-op"
+      },
+      {
+        "Id": 9,
+        "Name": "Puzzle"
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "RISK: Global Domination",
+    "Description": "Battle opponents in strategic warfare in the official digital version of the classic Hasbro board game loved by millions. Fight against the Axis Powers in WWI, survive war games against undead zombies and battle on fantasy, futuristic and sci-fi maps. Download RISK Global Domination for free now!",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/risk-cover.jpg",
+    "Categories": [
+      {
+        "Id": 10,
+        "Name": "Strategy"
+      },
+      {
+        "Id": 11,
+        "Name": "Multiplayer"
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Paladins\u00AE",
+    "Description": "Paladins is a fantasy team-based shooter set in a vibrant Realm, featuring a large cast of Champions from sharpshooting mercenaries, magic wielding scholars, supernatural entities, and even deities and monstrosities from the stars. Teams of 5 face off in a variety of modes from pushing a payload to contesting rotating objectives.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/paladins-cover.jpg",
+    "Categories": [
+      {
+        "Id": 10,
+        "Name": "Strategy"
+      },
+      {
+        "Id": 11,
+        "Name": "Multiplayer"
+      },
+      {
+        "Id": 12,
+        "Name": "Shooter"
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "Name": "Overwatch\u00AE 2",
+    "Description": "Overwatch 2 is a 2023 first-person shooter video game produced by Blizzard Entertainment. As a sequel and replacement to the 2016 hero shooter Overwatch, the game included new gamemodes and a reduction in team size from six to five.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/overwatch-2-cover.jpg",
+    "Categories": [
+      {
+        "Id": 10,
+        "Name": "Strategy"
+      },
+      {
+        "Id": 11,
+        "Name": "Multiplayer"
+      },
+      {
+        "Id": 12,
+        "Name": "Shooter"
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "Name": "MultiVersus",
+    "Description": "MultiVersus (MVS) is a free-to-play crossover fighting game developed by Player First Games and published by Warner Bros. Games for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. A platform fighter, the game features content from Warner Bros. franchises, including Looney Tunes, Scooby-Doo, Game of Thrones, the DC Universe, and Cartoon Network franchises. Officially announced in November 2021 following online rumors and leaks, early access and open beta versions of the game ran from July 2022 to June 2023. The game was fully released on May 28, 2024. The game will be delisted and all online functionality will be discontinued on May 30, 2025, though it will remain playable offline.",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/multiversus-cover.jpg",
+    "Categories": [
+      {
+        "Id": 13,
+        "Name": "Fighter"
+      },
+      {
+        "Id": 11,
+        "Name": "Multiplayer"
       }
     ]
   }

@@ -30,5 +30,29 @@
   {
     "Id": 7,
     "Name": "Adventure"
+  },
+  {
+    "Id": 8,
+    "Name": "Co-op"
+  },
+  {
+    "Id": 9,
+    "Name": "Puzzle"
+  },
+  {
+    "Id": 10,
+    "Name": "Strategy"
+  },
+  {
+    "Id": 11,
+    "Name": "Multiplayer"
+  },
+  {
+    "Id": 12,
+    "Name": "Shooter"
+  },
+  {
+    "Id": 13,
+    "Name": "Fighter"
   }
 ]
