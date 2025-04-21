@@ -31,7 +31,7 @@
     "Id": 2,
     "Name": "Minecraft",
     "Description": "Minecraft is a 2011 sandbox game developed and published by Swedish video game developer Mojang Studios. Originally created by Markus \u0027Notch\u0027 Persson using the Java programming language, the first public alpha build was released on 17 May 2009.",
-    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/minecraft-cover.jpg",
+    "Image": "https://raw.githubusercontent.com/LukaLominadze/GameDrive/refs/heads/resources/minecraft-cover.jpeg",
     "Categories": [
       {
         "Id": 3,
